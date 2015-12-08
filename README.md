@@ -52,7 +52,7 @@ $ go test -v
 ```
 # "THE BARBECUE-WARE LICENSE" (Revision 1):
 #
-# <paulo@gmail.com> wrote this file. As long as you retain this notice you
+# <benatto@gmail.com> wrote this file. As long as you retain this notice you
 # can do whatever you want with this stuff. If we meet some day, and you think
 # this stuff is worth it, you can make me a brazilian barbecue, including beers
 # and caipirinha in return to Paulo Leonardo Benatto.
