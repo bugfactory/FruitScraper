@@ -32,13 +32,13 @@ $ go get github.com/PuerkitoBio/goquery
 Clone the project.
 
 ```
-$ git clone
+$ git clone https://github.com/bugfactory/FruitScraper.git
 ```
 
 Running the project.
 
 ```
-$ go run
+$ go run main.go
 ```
 
 Running the tests.
