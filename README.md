@@ -1,7 +1,5 @@
 # FruitScraper
 
-## About
-
 Just a simple fruit scraper. :D
 
 ## Dependencies 
