@@ -61,6 +61,10 @@ $ go test -v
 # purchased.
 ```
 
+## TODO
+
+ * I didn't find the fruit description inside of html.
+
 ## Bug Reports
 
 You can open an [issue](https://github.com/bugfactory/FruitScraper/issues) or send me and email:
