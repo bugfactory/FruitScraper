@@ -2,6 +2,17 @@
 
 Just a simple fruit scraper. :D
 
+
+
+## Set your Go Environment
+
+Preparing your Go environment.
+
+```
+$ export GOPATH=$HOME/go
+$ mkdir -p $GOPATH/src/github.com/<user>
+```
+
 ## Dependencies 
 
 You need the compiler in your linux distribution.
@@ -16,13 +27,24 @@ You also have to get `goquery` libary.
 $ go get github.com/PuerkitoBio/goquery 
 ```
 
-## Set your Go Environment
+## Run
 
-Preparing your Go environment.
+Clone the project.
 
 ```
-$ export GOPATH=$HOME/go
-$ mkdir -p $GOPATH/src/github.com/<user>
+$ git clone
+```
+
+Running the project.
+
+```
+$ go run
+```
+
+Running the tests.
+
+```
+$ go test -v
 ```
 
 ## License
