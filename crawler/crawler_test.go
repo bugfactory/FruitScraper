@@ -51,16 +51,16 @@ func TestIntToString(t *testing.T) {
 	}
 }
 
-func TestGetPostInfo(t *testing.T) {
+func TestGetFruitInfo(t *testing.T) {
 	url := "http://patito.github.io/2015/10/17/business-card/"
 
-	s := GetPostInfo(url, ".post-date")
+	s := GetFruitInfo(url, ".post-date")
 	if s != "17 Oct 2015" {
 		t.Error("Expected 17 Oct 2015 and got ", s)
 	}
 
 	// Chewbacca Noise
-	s = GetPostInfo(url, "growlgrowlgrowl")
+	s = GetFruitInfo(url, "growlgrowlgrowl")
 	if s != "" {
 		t.Error("Expected nothing and got ", s)
 	}

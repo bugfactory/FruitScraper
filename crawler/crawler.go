@@ -12,7 +12,7 @@ import (
 	"github.com/PuerkitoBio/goquery"
 )
 
-type Post struct {
+type Fruit struct {
 	Title     string `json:"title"`
 	Size      string `json:"date"`
 	UnitPrice string `json:"unit_price"`
@@ -20,10 +20,10 @@ type Post struct {
 }
 
 type Crawler struct {
-	Posts []Post
-	Url   string
-	Doc   *goquery.Document
-	Total float64
+	Fruits []Fruit
+	Url    string
+	Doc    *goquery.Document
+	Total  float64
 }
 
 var (
@@ -33,24 +33,24 @@ var (
 	//tagDescription string = ""
 )
 
-// Save the post in the slice os posts
-func (c *Crawler) SavePost(i int, s *goquery.Selection) {
+// Save the fruit in the slice os fruits
+func (c *Crawler) SaveFruit(i int, s *goquery.Selection) {
 
 	// Link to the fruit/product
 	link, _ := s.Find("h3 a").Attr("href")
-	title := GetPostInfo(link, tagTitle)
+	title := GetFruitInfo(link, tagTitle)
 	size := IntToString(UrlSize(link))
 
 	// String with garbage (filtering)
-	unitPrice := GetPostInfo(link, tagUnitPrice)[3:7]
+	unitPrice := GetFruitInfo(link, tagUnitPrice)[3:7]
 
 	c.Total += StringToFloat(unitPrice)
 
-	post := Post{title, size, unitPrice}
-	c.Posts = append(c.Posts, post)
+	fruit := Fruit{title, size, unitPrice}
+	c.Fruits = append(c.Fruits, fruit)
 }
 
-func GetPostInfo(link string, tag string) string {
+func GetFruitInfo(link string, tag string) string {
 
 	doc, err := goquery.NewDocument(link)
 	if err != nil {
@@ -67,7 +67,7 @@ func GetPostInfo(link string, tag string) string {
 
 // Get ao posts in the main page
 func (c *Crawler) Start() {
-	c.Doc.Find(tagProduct).Each(c.SavePost)
+	c.Doc.Find(tagProduct).Each(c.SaveFruit)
 }
 
 // Return the URL size
@@ -105,7 +105,7 @@ func (c *Crawler) Init() {
 func New(url string) *Crawler {
 
 	c := &Crawler{}
-	c.Posts = make([]Post, 0)
+	c.Fruits = make([]Fruit, 0)
 	c.Url = url
 	c.Doc = nil
 
@@ -133,7 +133,7 @@ func StringToFloat(num string) float64 {
 func (c *Crawler) Print() {
 
 	results := map[string]interface{}{
-		"results": c.Posts,
+		"results": c.Fruits,
 		"total":   c.Total,
 	}
 
