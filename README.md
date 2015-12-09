@@ -32,13 +32,13 @@ $ go get github.com/PuerkitoBio/goquery
 Clone the project.
 
 ```
-$ git clone
+$ git clone https://github.com/bugfactory/FruitScraper.git
 ```
 
 Running the project.
 
 ```
-$ go run
+$ go run main.go
 ```
 
 Running the tests.
@@ -52,7 +52,7 @@ $ go test -v
 ```
 # "THE BARBECUE-WARE LICENSE" (Revision 1):
 #
-# <paulo@gmail.com> wrote this file. As long as you retain this notice you
+# <benatto@gmail.com> wrote this file. As long as you retain this notice you
 # can do whatever you want with this stuff. If we meet some day, and you think
 # this stuff is worth it, you can make me a brazilian barbecue, including beers
 # and caipirinha in return to Paulo Leonardo Benatto.
@@ -60,6 +60,10 @@ $ go test -v
 # The quality of the barbecue depends on the amount of beer that has been
 # purchased.
 ```
+
+## TODO
+
+ * I didn't find the fruit description inside of html.
 
 ## Bug Reports
 
