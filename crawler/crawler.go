@@ -112,14 +112,6 @@ func New(url string) *Crawler {
 	return c
 }
 
-// Just a pretty print function to print
-// better the JSON data - stackoverflow
-func prettyPrint(b []byte) ([]byte, error) {
-	var out bytes.Buffer
-	err := json.Indent(&out, b, "", "  ")
-	return out.Bytes(), err
-}
-
 func StringToFloat(num string) float64 {
 	result, err := strconv.ParseFloat(num, 64)
 	if err != nil {
@@ -137,11 +129,10 @@ func (c *Crawler) Print() {
 		"total":   c.Total,
 	}
 
-	b, err := json.Marshal(results)
+	b, err := json.MarshalIndent(results, "", "\t")
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	pp, _ := prettyPrint(b)
-	fmt.Printf("%s\n", pp)
+	fmt.Printf("%s\n", b)
 }
